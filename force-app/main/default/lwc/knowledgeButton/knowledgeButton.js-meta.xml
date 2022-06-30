@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Knowledge Button</masterLabel>
+    <description>Given a Knowledge article name, displays information from the article in a modal window</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage">
+            <property label="Knowledge Article Name" name="articleName" type="String" description="Name for the Knowledge article you wish to return the details of"/>
+            <property label="Button Label" name="buttonLabel" type="String" default="Get Help" description="Label to display on the button"/>
+            <property label="Button Variant" name="variant" type="String" default="brand" description="Button variant. Please choose from: base, neutral, brand, brand-outline, destructive, destructive-text, success"/>
+            <property label="Use Button Icon" name="useIcon" type="Boolean" default="true" description="Use icon in addition to label as part of the button's display. Must be true or false"/>
+            <property label="slds Icon Name" name="iconName" type="String" default="knowledge_base" description="slds Icon Name. Please choose from https://www.lightningdesignsystem.com/icons/#utility"/>
+            <property label="Confirmation Button Label" name="confirmationButtonLabel" type="String" default="Got it" description="Label to display for confirmation on the modal pop-up screen"/>
+            <property label="Modal Size" name="modalSize" type="String" default="medium" description="Size of the modal to display. Can be small, medium or large"/>
+            <supportedFormFactors>
+                <supportedFormFactor type="Large" />
+            </supportedFormFactors>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

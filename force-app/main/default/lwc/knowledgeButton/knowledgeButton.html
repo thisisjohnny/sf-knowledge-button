@@ -1,0 +1,26 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <template if:true={useIcon}>
+        <lightning-button variant={variant} label={buttonLabel} title={buttonLabel} icon-name={getIconName} onclick={openModal}></lightning-button>
+    </template>
+    <template if:false={useIcon}>
+        <lightning-button variant={variant} label={buttonLabel} title={buttonLabel} onclick={openModal}></lightning-button>
+    </template>
+
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class={getModalSize}>
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{getArticleTitle}</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-formatted-rich-text value={getArticleDetails}></lightning-formatted-rich-text>
+                </div>
+                <div class="slds-modal__footer">
+                    <lightning-button variant="brand" label={confirmationButtonLabel} onclick={closeModal}></lightning-button>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
